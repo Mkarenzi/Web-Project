@@ -2,7 +2,7 @@
 const login = (e) => {
 
     if (e.username == '') {
-        console.log("Error")
+        console.log("Validation Error")
         document.getElementsByClassName('email_lbl')[0].innerHTML = "Email is Required"
     } else {
         document.getElementsByClassName('email_lbl')[0].innerHTML = ""
