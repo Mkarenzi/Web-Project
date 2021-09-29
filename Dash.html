@@ -3,7 +3,7 @@
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="./public/style.css" />
+<link rel="stylesheet" href="./public/css/style.css" />
 <style>
     * {
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -11,7 +11,6 @@
 
     .sticky-section {
         overflow: hidden;
-        background-color: #09689E;
         margin-bottom: 50px;
         width: 100%;
         color: white;
@@ -23,101 +22,262 @@
 
 <body style="background-color: #FCF7F7;" onload="openLink(event, 'Dashboard')">
 
-    <div class="flex justify-between p-8 sticky-section">
+    <div class="flex justify-between p-8 bg-blue-500 sticky-section">
         <div class="font-bold">
             TSMANAGER
         </div>
-        <div>
-            Umutesi Karenzi
+        <div id="topFullName">
+
         </div>
     </div>
-    <div class="w3-sidebar w3-bar-block p-4" style="width:130px;background-color: inherit !important;">
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Dashboard')">Dashboard</button>
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'NewTask')">New Tak</button>
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'ViewTask')">View task</button>
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'profile')">Profile</button>
-        <button class="w3-bar-item w3-button tablink" onclick="logout(event)">Logout</button>
-    </div>
+    <div class="flex">
+        <div class="flex flex-col gap-5" style="background-color: inherit !important;">
+            <button class="hover:bg-blue-100 tablink p-2 px-10"
+                onclick="openLink(event, 'Dashboard')">Dashboard</button>
+            <button class="hover:bg-blue-100 tablink p-2 px-10" onclick="openLink(event, 'NewTask')">New Tak</button>
+            <button class="hover:bg-blue-100 tablink p-2 px-10" onclick="openLink(event, 'ViewTask')">View task</button>
+            <button class="hover:bg-blue-100 tablink p-2 px-10" onclick="openLink(event, 'profile')">Profile</button>
+            <button class="hover:bg-blue-100 tablink p-2 px-10" onclick="logout(event)">Logout</button>
+        </div>
 
-    <div style="margin-left:130px" class="bg-white p-10">
-        <div id="Dashboard" class="w3-container city w3-animate-opacity " style="display:none">
+        <div class="bg-white w-full">
+            <div id="Dashboard" class="w-full city w3-animate-opacity  p-10" style="display:none">
 
-            <div class="flex flex-col gap-4">
-                <div class="flex justify-between gap-4">
-                    <div class="border border-gray-200">
-                        <img src="pic.png" alt="Simply Easy Learning" width="500" height="300" />
+                <div class="flex flex-col w-full gap-4">
+                    <div class="flex justify-between gap-4">
+                        <div class="border border-gray-200">
+                            <img src="./public/images/pic.png" alt="Simply Easy Learning" width="500" height="300" />
+                        </div>
+                        <div class="text-2xl text-left">
+                            Welcome <span class="text-4xl font-bold">Umutesi Karenzi</span>
+                        </div>
                     </div>
-                    <div class="text-2xl text-left">
-                        Welcome <span class="text-4xl font-bold">Umutesi Karenzi</span>
+                    <div class="flex gap-4">
+                        <div>
+                            <h1 class="text-4xl font-bold"> Create and Manage Your Tasks in TSMANAGER</h1>
+                        </div>
+                        <div>
+                            <img src="./public/images/task.png" alt="Simply Easy Learning" width="100" height="120" />
+                        </div>
                     </div>
-                </div>
-                <div class="flex gap-4">
                     <div>
-                        <h1 class="text-4xl font-bold"> Create and Manage Your Tasks in TSMANAGER</h1>
+                        <h1> <b class="text-8xl">We</b> Give Better Way to Save Your Daily task </h1>
                     </div>
                     <div>
-                        <img src="task.png" alt="Simply Easy Learning" width="100" height="120" />
+                        <p>
+                            Stay organized with this accessible daily task list template.
+                            Important events, special occasions,
+                            and holidays get their own list,
+                            and daily to-do tasks keep you on track.
+                            Keep a running list of daily tasks by typing a date in
+                            the yellow box to highlight tasks for that day.
+                        </p>
                     </div>
                 </div>
-                <div>
-                    <h1> <b class="text-8xl">We</b> Give Better Way to Save Your Daily task </h1>
+            </div>
+
+            <div id="NewTask" class="w3-container city w3-animate-opacity  p-10" style="display:none">
+                <div class="w-full p-4">
+                    <form class="bg-white shadow-md rounded px-16 pt-6 pb-8 mb-4">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                                Title
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="title" type="text" placeholder="Title">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
+                                Date&Time
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="datetime" type="datetime-local">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+                                Description
+                            </label>
+                            <textarea
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="description" type="text" placeholder="Description"></textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="button"
+                                onclick="newtask({title:document.getElementById('title').value,dateTime:document.getElementById('datetime').value,description:document.getElementById('description').value});">
+                                Create
+                            </button>
+                        </div>
+                    </form>
                 </div>
+            </div>
+
+            <div id="ViewTask" class="w3-container city w3-animate-opacity p-10" style="display:none">
                 <div>
-                    <p>
-                        Stay organized with this accessible daily task list template.
-                        Important events, special occasions,
-                        and holidays get their own list,
-                        and daily to-do tasks keep you on track.
-                        Keep a running list of daily tasks by typing a date in
-                        the yellow box to highlight tasks for that day.
-                    </p>
+                    <div class="flex flex-col">
+                        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Title
+                                                </th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Date&Time
+                                                </th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Description
+                                                </th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Status
+                                                </th>
+                                                <th scope="col" class="relative px-6 py-3">
+                                                    <span class="sr-only">Edit</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="taskBodyTable" class="bg-white divide-y divide-gray-200">
+
+
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div id="profile" class="w3-container city w3-animate-opacity  p-10" style="display:none">
+                <form class="p-20 m-20 border border-blue-300">
+                    <div class="w-full p-4">
+                        <form class="bg-white shadow-md rounded px-16 pt-6 pb-8 mb-4">
+                            <input hidden type="text" id="id"/>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">
+                                    FirstName
+                                </label>
+                                <input
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="firstName" type="text" placeholder="Type your fullName">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="lastName">
+                                    LastName
+                                </label>
+                                <input
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="lastName" type="text" placeholder="Type your username">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                    E-mail
+                                </label>
+                                <input
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="email" placeholder="Type your E-mail" type="text">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    Username
+                                </label>
+                                <input
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="username" placeholder="Type your username" type="text">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <button
+                                    onclick="updateProfile({id:document.getElementById('id').value,firstName:document.getElementById('firstName').value,lastName:document.getElementById('lastName').value,username:document.getElementById('username').value,email:document.getElementById('email').value});"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button">
+                                    update
+                                </button>
+                            </div>
+                        </form>
+           
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div id="NewTask" class="w3-container city w3-animate-opacity" style="display:none">
-            <div class="w-full p-4">
-                <form class="bg-white shadow-md rounded px-16 pt-6 pb-8 mb-4">
-                  <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-                        Title
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Title">
-                  </div>
-                  <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
-                        Date&Time
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="datetime" type="datetime-local">
-                </div>
-                  <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
-                        Description
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" placeholder="Description">
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                      Create
-                    </button>
-                  </div>
-                </form>
-              </div>
-        </div>
-
-        <div id="ViewTask" class="w3-container city w3-animate-opacity" style="display:none">
-            <h2>Slide in from top</h2>
-            <p>Tokyo is the capital of Japan.</p>
-            <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
-        </div>
-        <div id="profile" class="w3-container city w3-animate-opacity" style="display:none">
-            <h2>Slide in from top</h2>
-            <p>Tokyo is the capital of Japan.</p>
-            <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
-        </div>
     </div>
 
+    <div id="mymodal" class="fixed  hidden z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+
+                <div class="w-full p-4">
+                    <form class="bg-white shadow-md rounded px-16 pt-6 pb-8 mb-4">
+                        <input type="text" hidden id="up_id"/>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="up_title">
+                                Title
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="up_title" type="text" placeholder="Title">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="up_datetime">
+                                Date&Time
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="up_datetime" type="datetime-local">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="up_description">
+                                Description
+                            </label>
+                            <textarea
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="up_description" type="text" placeholder="Description"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="up_status">
+                                status
+                            </label>
+                            <select
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="up_status" type="text" placeholder="Status">
+                                <option>PENDING</option>
+                                <option>DONE</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                                <button type="button" onclick="closeModal()"
+                                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                    Cancel
+                                </button>
+                                <button type="button" onclick="updateTask({id:document.getElementById('up_id').value,title:document.getElementById('up_title').value,dateTime:document.getElementById('up_datetime').value,description:document.getElementById('up_description').value,status:document.getElementById('up_status').value});"
+                                    class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
+        function closeModal() {
+            document.getElementById('mymodal').classList.add('hidden');
+        }
         function openLink(evt, animName) {
             var i, x, tablinks;
             x = document.getElementsByClassName("city");
@@ -132,9 +292,11 @@
             evt.currentTarget.className += " text-blue-700";
         }
         function logout(evt) {
+            window.localStorage.removeItem('user');
             window.location.href = "index.html"
         }
     </script>
+    <script src="./public/dash.js"></script>
 
 </body>
 

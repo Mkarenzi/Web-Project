@@ -5,40 +5,48 @@
     <title>
         login page
     </title>
-    <link rel="stylesheet" href="p.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script src="./public/main.js" ></script>
 </head>
 
 <body>
-    <div class="main-container">
+    <div class="main-container p-4">
         <di>
-            <h1> Task Management System</h1>
-            <h2 style="text-align: center;"> LOGIN </h2>
+            <h2 class="text-center font-bold text-4xl"> Sign In </h2>
         </di>
-        <form action="action_page.php" method="post">
-            <div class="imgcontainer">
-            </div>
-
-            <div class="container">
-                <div>
-                    <label for="Email"><b>Email</b></label>
-                    <input type="email" name="Email" required>
+        <form id="loginform" class="p-20 m-20 border border-blue-300">
+            <div class="w-full p-4"> 
+                <form class="bg-white shadow-md rounded px-16 pt-6 pb-8 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                            Username
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="email" placeholder="Type your Username" type="email">
+                            <label class="email_lbl text-red-700"></label>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                            Password
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="password" placeholder="Type your Password" type="password">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="button"
+                            onclick="login({username:document.getElementById('email').value,password:document.getElementById('password').value});"
+                            >
+                            Signin
+                        </button>
+                    </div>
+                </form>
+                <div class="py-4">
+                    <p>Don't have account ? <a class="text-blue-500" href="./signup.html">Signup</a></p>
                 </div>
-
-                <div>
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" name="psw" required>
-                </div>
-                <span>
-                    <input type="checkbox" checked="checked" name="remember"> Remember username
-                </span>
-                <button style="width: max-content;align-self: center;background:#564A9A;color: white;padding: 6px;"
-                    type="submit">Login</button>
-            </div>
-            <div>
-                <p>
-                    Do you have an account?
-                    <a href="signup.html" style="color: #CD79C5;">SIGN UP</a>
-                </p>
             </div>
         </form>
     </div>

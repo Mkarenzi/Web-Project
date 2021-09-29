@@ -8,7 +8,7 @@
        display: flex;
        flex-direction: column;
        justify-content: center;
-       background-image: url("./download.jfif");
+       background-image: url("./public/images/download.jfif");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
