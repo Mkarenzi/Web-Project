@@ -20,7 +20,7 @@ const getTasks = () => {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:9092/todo/findAll", true);
+    xhr.open("GET", "https://todo-webtech.herokuapp.com/todo/findAll", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Authorization', `Bearer ${user.authenticationToken}`);
     xhr.send()
@@ -62,7 +62,7 @@ const getTasks = () => {
 const openModal = (id) => {
     let user = JSON.parse(window.localStorage.getItem('user'));
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://localhost:9092/todo/find/${id}`, true);
+    xhr.open("GET", `https://todo-webtech.herokuapp.com/todo/find/${id}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Authorization', `Bearer ${user.authenticationToken}`);
     xhr.send();
@@ -85,7 +85,7 @@ const newtask = (e) => {
     } else {
         let user = JSON.parse(window.localStorage.getItem('user'));
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:9092/todo/save", true);
+        xhr.open("POST", "https://todo-webtech.herokuapp.com/todo/save", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Authorization', `Bearer ${user.authenticationToken}`);
         xhr.send(JSON.stringify(e));
@@ -106,7 +106,7 @@ const updateTask = (e) => {
     } else {
         let user = JSON.parse(window.localStorage.getItem('user'));
         var xhr = new XMLHttpRequest();
-        xhr.open("PATCH", `http://localhost:9092/todo/update`, true);
+        xhr.open("PATCH", `https://todo-webtech.herokuapp.com/todo/update`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Authorization', `Bearer ${user.authenticationToken}`);
         xhr.send(JSON.stringify(e));
@@ -131,7 +131,7 @@ const updateTask = (e) => {
 const deletetask = (id) => {
     let user = JSON.parse(window.localStorage.getItem('user'));
     var xhr = new XMLHttpRequest();
-    xhr.open("DELETE", `http://localhost:9092/todo/delete/${id}`, true);
+    xhr.open("DELETE", `https://todo-webtech.herokuapp.com/todo/delete/${id}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Authorization', `Bearer ${user.authenticationToken}`);
     xhr.send();
@@ -148,7 +148,7 @@ const updateProfile = (e)=>{
     } else {
         let user = JSON.parse(window.localStorage.getItem('user'));
         var xhr = new XMLHttpRequest();
-        xhr.open("PUT", `http://localhost:9092/api/auth/update`, true);
+        xhr.open("PUT", `https://todo-webtech.herokuapp.com/api/auth/update`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Authorization', `Bearer ${user.authenticationToken}`);
         xhr.send(JSON.stringify(e));

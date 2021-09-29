@@ -7,7 +7,7 @@ const login = (e) => {
     } else {
         document.getElementsByClassName('email_lbl')[0].innerHTML = ""
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:9092/api/auth/login", true);
+        xhr.open("POST", "https://todo-webtech.herokuapp.com/api/auth/login", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
             username: e.username,
@@ -38,7 +38,7 @@ const signup = (e) => {
         console.log("Error")
     } else {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:9092/api/auth/register", true);
+        xhr.open("POST", "https://todo-webtech.herokuapp.com/api/auth/register", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(e));
         xhr.onload = function () {
